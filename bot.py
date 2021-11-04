@@ -3,8 +3,10 @@ from discord.commands.commands import Option, slash_command
 import aiohttp
 import json
 
-with open("config.json") as config:
-    token = config["token"]
+with open("config.json") as config_f:
+    config = json.load(config_f)
+
+token = config["token"]
 bot = discord.Bot()
 
 
